@@ -1,0 +1,33 @@
+theme = Catppuccin Mocha
+font-family = "Maple Mono"
+font-size = 12
+font-feature = ligature
+# window-padding-x = 2
+
+
+
+# Shell Config
+shell-integration = zsh
+
+
+# Background blur and transparency
+background-opacity = 0.60
+background-blur-radius = 20
+
+
+# Cursor
+cursor-style = block
+cursor-style-blink = true
+
+
+# Window
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = true
+window-width = 120
+window-height = 32
+
+
+# Other userful settings
+copy-on-select = false
+mouse-hide-while-typing = true
