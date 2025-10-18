@@ -1,6 +1,7 @@
 # User configuration
 setopt PROMPT_SUBST
 
+
 # Basic prompt with hostname and full path
 PROMPT='%F{green}%n@%m%f:%F{blue}%~%f $ '
 # You may need to manually set your language environment
@@ -33,16 +34,21 @@ autoload -U compinit
 compinit
 
 
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+
 # Aliases
-alias ll='ls -l'
-alias la='ls -al'
+alias ll='exa -l'
+alias la='exa -al'
+alias tree='exa -T'
+alias ls='exa --icons'
 alias python='python3'
 alias btop='bpytop'
 alias speedtest='speedtest-cli'
-alias bat='batcat'
 alias vi='nvim'
+alias anime='ani-cli'
 alias paru-clean='paru -Scc --noconfirm && rm -rf ~/.cache/paru/clone/* && echo "🧹 Paru cache fully cleaned!"'
-
 
 
 eval "$(zoxide init zsh)"
