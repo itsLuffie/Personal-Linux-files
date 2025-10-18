@@ -1,3 +1,5 @@
+config-file = ~/.config/ghostty/keybinds
+# Theming
 theme = Catppuccin Mocha
 font-family = "Maple Mono"
 font-size = 12
