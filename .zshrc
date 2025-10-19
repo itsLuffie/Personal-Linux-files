@@ -192,11 +192,11 @@ zle -N zle-line-init
 # ───────────────────────────────
 # ALIASES
 # ───────────────────────────────
-alias ll='exa -l'
-alias la='exa -al'
-alias lsa='exa -a --icons'
-alias tree='exa -T'
-alias ls='exa --icons'
+alias ll='eza -l'
+alias la='eza -al'
+alias lsa='eza -a --icons'
+alias tree='eza -T'
+alias ls='eza --icons'
 alias python='python3'
 alias btop='bpytop'
 alias speedtest='speedtest-cli'
