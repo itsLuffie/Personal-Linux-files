@@ -22,34 +22,40 @@ error_symbol = "[❯](bold red)"
 vicmd_symbol = "[❮](bold yellow)"
 
 [directory]
-format = "[$path]($style) "
 style = "bold cyan"
+#format = "[$path]($style) "
 truncation_length = 3
 truncate_to_repo = false
 
 # Username and hostname modules
 [username]
+style_user = "bold blue"
+style_root = "red bold"
 format = "[$user]($style)"
-style_user = "bold yellow"
+disabled = false
 show_always = true
 
 [hostname]
-format = "[@$hostname](bold yellow): "
+format = "@(dimmed white)[$hostname](bold green): "
 ssh_only = false
 disabled = false
 
 [git_branch]
-format = "[$symbol$branch]($style) "
-symbol = " "
-style = "bold purple"
+format = "[$branch]($style) "
+#symbol = " "
+style = "bright black"
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "dimmed white"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "dimmed yellow"
+format = '([$conflicted$diverged$ahead_behind$stashed$untracked$modified$staged]($style))'
+style = 'bold purple'
+conflicted = '✘'  # Merge conflict symbol
+diverged = '⇕'    # Diverged branches symbol
+ahead = '⇡'       # Ahead of remote symbol
+behind = '⇣'      # Behind remote symbol
+stashed = '$'   # Stashed changes symbol
+untracked = '?'   # Untracked files symbol
+modified = '!'    # Modified files symbol
+staged = '+'      # Staged files symbol
 
 [cmd_duration]
 min_time = 1000

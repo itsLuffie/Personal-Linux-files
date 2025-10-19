@@ -1,0 +1,17 @@
+# packages.txt
+git
+neovim
+zsh
+eza
+broot
+fd
+btop
+wget
+curl
+python
+mpv
+ffmpeg
+yazi
+fzf
+spectacle
+qview
