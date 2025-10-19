@@ -194,6 +194,7 @@ zle -N zle-line-init
 # ───────────────────────────────
 alias ll='exa -l'
 alias la='exa -al'
+alias lsa='exa -a --icons'
 alias tree='exa -T'
 alias ls='exa --icons'
 alias python='python3'
