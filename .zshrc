@@ -143,9 +143,16 @@ preexec() {
     print -rn -- $terminfo[el]
 }
 
+
+FIRST_PROMPT=true
 precmd() {
-    print ""
+    if [[ $FIRST_PROMPT == true ]]; then
+        FIRST_PROMPT=false
+    else
+        print ""
+    fi
 }
+
 
 # Enhanced transient prompt with Starship
 zle-line-init() {
