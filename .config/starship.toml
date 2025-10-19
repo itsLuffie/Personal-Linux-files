@@ -1,0 +1,68 @@
+# -- Starship Config: Clean, Functional, Aesthetic --
+# Author: Luffie Edition
+# ───────────────────────────────
+# GLOBAL CONFIG
+# ───────────────────────────────
+add_newline = false
+command_timeout = 1000
+format = """
+$username$hostname$directory$git_branch$git_state$git_status
+$character
+"""
+right_format = """
+$cmd_duration$custom.ms
+"""
+
+# ───────────────────────────────
+# PROMPT MODULES
+# ───────────────────────────────
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+
+[directory]
+format = "[$path]($style) "
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = false
+
+# Username and hostname modules
+[username]
+format = "[$user]($style)"
+style_user = "bold yellow"
+show_always = true
+
+[hostname]
+format = "[@$hostname](bold yellow): "
+ssh_only = false
+disabled = false
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "dimmed white"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "dimmed yellow"
+
+[cmd_duration]
+min_time = 1000
+format = "[⏱ $duration]($style)"
+style = "dimmed blue"
+
+# ───────────────────────────────
+# CUSTOM LATENCY MODULE
+# ───────────────────────────────
+# Displays ping latency (example: Cloudflare DNS)
+[custom.latency]
+command = "ping -c 1 -W 1 1.1.1.1 2>/dev/null | awk -F'[=.]' '/time=/{print $2; exit}' || echo 'N/A'"
+when = "true"
+format = "[$output]($style)"
+style = "dimmed green"
+description = "Network latency check"
