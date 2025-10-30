@@ -1,5 +1,4 @@
 # packages.txt
-git
 neovim
 zsh
 eza
@@ -14,4 +13,4 @@ ffmpeg
 yazi
 fzf
 spectacle
-qview
+partitionmanager

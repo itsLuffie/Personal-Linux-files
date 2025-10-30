@@ -4,7 +4,7 @@
 # export ARCHFLAGS="-arch $(uname -m)"# ═══════════════════════════════════════════════════
 # ZSH Configuration - Luffie Edition
 # ═══════════════════════════════════════════════════
-
+#
 # ───────────────────────────────
 # COMPLETION SYSTEM (Load before plugins)
 # ───────────────────────────────
@@ -221,6 +221,12 @@ alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
 
+# Ollama aliases
+alias ollama-start='systemctl start ollama && podman-compose -f ~/.local/share/open-webui/open-webui-compose.yaml up -d'
+alias ollama-stop='podman-compose -f ~/.local/share/open-webui/open-webui-compose.yaml down && systemctl stop ollama'
+alias ollama-status='systemctl status ollama && podman ps -a | grep open-webui'
+
+
 # ───────────────────────────────
 # STARSHIP & ZOXIDE
 # ───────────────────────────────
@@ -245,3 +251,15 @@ backup() {
 # ENVIRONMENT
 # ───────────────────────────────
 . "$HOME/.local/bin/env"
+
+# Wine controller support
+export SDL_GAMECONTROLLER_ALLOW_STEAM_VIRTUAL_GAMEPAD=1
+export WINE_GAMEPAD=1
+export SDL_JOYSTICK_DEVICE=/dev/input/event30
+
+# CUDA Environment - Zsh compatible
+if [[ -d /opt/cuda/bin ]]; then
+    export PATH="/opt/cuda/bin${PATH:+:${PATH}}"
+    export LD_LIBRARY_PATH="/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+    export CUDA_HOME="/opt/cuda"
+fi
