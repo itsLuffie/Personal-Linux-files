@@ -1,0 +1,20 @@
+celluloid-git
+droidcam
+elecwhat-bin
+enete-auth-bin
+freac
+koodo-reader-bin
+localsend-bin
+losslesscut-bin
+ocenaudio #package download
+qview
+pcloud-drive
+preload
+proton-pass-bin
+siyuan-note-bin
+spotify
+tauon-music-box
+tutanota-desktop-bin
+video-downloader
+visual-studio-code-bin
+warp-terminal #Download from site
